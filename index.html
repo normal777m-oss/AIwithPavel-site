@@ -16,7 +16,7 @@
   <meta property="og:description" content="Високоефективни статични сайтове без месечни такси. Светкавична скорост, максимална сигурност.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://aiwithpavel.com">
-  <meta property="og:image" content="https://aiwithpavel.com/og-image.jpg"> <!-- ЗАМЕНЕТЕ с реален URL -->
+  <meta property="og:image" content="https://aiwithpavel.com/og-image.jpg">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
   <meta property="og:locale" content="bg_BG">
@@ -93,11 +93,42 @@
       margin-bottom: 1rem;
     }
 
+    /* Подобрен контраст – от #cbd5e0 на #e2e8f0 */
     .section-desc {
       font-size: 1.2rem;
-      color: #cbd5e0;
+      color: #e2e8f0;
       max-width: 700px;
       margin-bottom: 3rem;
+    }
+
+    /* === SPEED BADGE – нов елемент за визуално доверие === */
+    .speed-badge {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      background: rgba(10, 10, 10, 0.8);
+      backdrop-filter: blur(4px);
+      border-radius: 60px;
+      padding: 8px 16px;
+      border: 1px solid #4da6ff40;
+      box-shadow: 0 4px 15px rgba(77, 166, 255, 0.2);
+      z-index: 10;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 0.9rem;
+    }
+    .speed-badge i {
+      color: #4da6ff;
+      font-size: 1.2rem;
+    }
+    .speed-badge .score {
+      background: #4da6ff;
+      color: #0a0a0a;
+      font-weight: 700;
+      padding: 2px 8px;
+      border-radius: 40px;
+      font-size: 0.8rem;
     }
 
     /* === НАВИГАЦИЯ (STICKY) === */
@@ -148,6 +179,7 @@
       transition: color 0.2s ease;
       font-size: 1rem;
       position: relative;
+      padding: 5px 0; /* Увеличена click area */
     }
     .nav-links a:hover {
       color: #4da6ff;
@@ -222,7 +254,7 @@
     }
     .hero .subhead {
       font-size: 1.3rem;
-      color: #cbd5e0;
+      color: #e2e8f0;
       margin-bottom: 32px;
     }
     .cta-btn {
@@ -257,6 +289,7 @@
       background-image: radial-gradient(circle at 20px 20px, #4da6ff30 1.5px, transparent 1px);
       background-size: 30px 30px;
       animation: pulse-glow 4s infinite ease-in-out;
+      position: relative;
     }
     .hero-image i {
       font-size: 5rem;
@@ -266,7 +299,33 @@
     }
     .hero-image .mockup-label {
       font-size: 0.9rem;
-      color: #cbd5e0;
+      color: #e2e8f0;
+    }
+
+    /* === LOGO BAR (TRUST SIGNALS) – нов елемент === */
+    .trust-bar {
+      background: #0f0f0f;
+      padding: 30px 0;
+      border-top: 1px solid #2a2a2a;
+      border-bottom: 1px solid #2a2a2a;
+    }
+    .trust-bar .container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+    .trust-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: #e2e8f0;
+      font-size: 0.95rem;
+    }
+    .trust-item i {
+      color: #4da6ff;
+      font-size: 1.5rem;
     }
 
     /* === СЕКЦИЯ ЗАЩО ЧИСТ HTML === */
@@ -311,7 +370,7 @@
       align-items: flex-start;
       gap: 12px;
       font-size: 1.1rem;
-      color: #cbd5e0;
+      color: #e2e8f0;
     }
     .benefit-list li i {
       font-size: 1.3rem;
@@ -375,7 +434,7 @@
       color: #ffffff;
     }
     .service-card p {
-      color: #cbd5e0;
+      color: #e2e8f0;
       font-size: 1rem;
       margin-bottom: 24px;
     }
@@ -417,7 +476,7 @@
       margin-bottom: 10px;
     }
     .process-step p {
-      color: #cbd5e0;
+      color: #e2e8f0;
     }
     .ai-note {
       text-align: center;
@@ -437,7 +496,7 @@
       font-weight: 600;
     }
 
-    /* === ПОРТФОЛИО / ПРИМЕРИ – с подобрена интерактивност за демо === */
+    /* === ПОРТФОЛИО / ПРИМЕРИ – с подобрена интерактивност === */
     .portfolio {
       padding: 90px 0;
       background: #0f0f0f;
@@ -445,7 +504,7 @@
     .portfolio-grid {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
-      gap: 25px;
+      gap: 30px; /* Увеличен gap за повече "въздух" */
       margin-top: 20px;
     }
     .portfolio-item {
@@ -530,7 +589,7 @@
       filter: grayscale(0%);
     }
     .portfolio-content {
-      padding: 20px 18px 24px;
+      padding: 24px 20px 28px; /* Увеличен padding за по-добра click area */
     }
     .portfolio-content h3 {
       font-size: 1.4rem;
@@ -538,9 +597,9 @@
       color: #ffffff;
     }
     .portfolio-content p {
-      color: #cbd5e0;
-      margin-bottom: 14px;
-      font-size: 0.9rem;
+      color: #e2e8f0;
+      margin-bottom: 16px;
+      font-size: 0.95rem;
     }
     .portfolio-tag {
       display: inline-block;
@@ -551,11 +610,12 @@
       padding: 4px 12px;
       border-radius: 40px;
       margin-right: 6px;
-      margin-bottom: 6px;
+      margin-bottom: 8px;
     }
+    /* Увеличена click area за линковете в портфолиото */
     .portfolio-link {
       display: inline-block;
-      margin-top: 12px;
+      margin-top: 16px;
       color: #4da6ff;
       font-weight: 600;
       text-decoration: none;
@@ -563,10 +623,11 @@
       display: inline-flex;
       align-items: center;
       gap: 6px;
-      font-size: 0.9rem;
+      font-size: 1rem; /* Увеличен шрифт */
+      padding: 8px 0; /* По-голяма click area */
     }
     .portfolio-link i {
-      font-size: 0.8rem;
+      font-size: 0.9rem;
       transition: transform 0.2s;
     }
     .portfolio-link:hover {
@@ -576,7 +637,7 @@
       transform: translateX(4px);
     }
 
-    /* === ЗА МЕН – с кликаем телефон === */
+    /* === ЗА МЕН – с кликаем телефон и място за снимка === */
     .about {
       padding: 60px 0;
       background: #0a0a0a;
@@ -601,17 +662,23 @@
       align-items: center;
       justify-content: center;
       border: 3px solid #4da6ff;
+      overflow: hidden;
     }
     .about-avatar i {
       font-size: 5rem;
       color: #4da6ff;
+    }
+    .about-avatar img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
     }
     .about-content h3 {
       font-size: 2rem;
       margin-bottom: 10px;
     }
     .about-content p {
-      color: #cbd5e0;
+      color: #e2e8f0;
       margin-bottom: 15px;
     }
     .phone-link {
@@ -619,6 +686,9 @@
       text-decoration: none;
       font-weight: 600;
       transition: color 0.2s;
+      font-size: 1.1rem;
+      display: inline-block;
+      padding: 5px 0;
     }
     .phone-link:hover {
       color: #80bfff;
@@ -667,7 +737,7 @@
       background: #4da6ff;
       color: #0a0a0a;
       border: none;
-      padding: 16px 40px;
+      padding: 18px 40px; /* Увеличен padding за по-лесно натискане */
       border-radius: 60px;
       font-weight: 600;
       font-size: 1.2rem;
@@ -681,7 +751,7 @@
       box-shadow: 0 10px 20px -5px #4da6ff80;
     }
     .form-note {
-      color: #cbd5e0;
+      color: #e2e8f0;
       font-size: 0.8rem;
       margin-top: 20px;
       text-align: center;
@@ -690,7 +760,7 @@
     /* === FOOTER === */
     .footer {
       background: #0f0f0f;
-      color: #cbd5e0;
+      color: #e2e8f0;
       padding: 48px 0 32px;
       border-top: 1px solid #2a2a2a;
     }
@@ -713,16 +783,18 @@
       gap: 28px;
     }
     .social-links a {
-      color: #cbd5e0;
+      color: #e2e8f0;
       font-size: 1.5rem;
       transition: color 0.2s, transform 0.2s;
+      display: inline-block;
+      padding: 5px;
     }
     .social-links a:hover {
       color: #4da6ff;
       transform: translateY(-3px);
     }
 
-    /* === RESPONSIVE === */
+    /* === RESPONSIVE – с подобрения за мобилна версия === */
     @media screen and (max-width: 1100px) {
       .portfolio-grid {
         grid-template-columns: repeat(3, 1fr);
@@ -736,6 +808,7 @@
       .card-grid, .portfolio-grid, .process-grid { grid-template-columns: repeat(2, 1fr); }
       .compare-grid { grid-template-columns: 1fr; gap: 30px; }
       .about-card { flex-direction: column; text-align: center; padding: 30px; }
+      .trust-bar .container { justify-content: center; }
     }
     @media screen and (max-width: 680px) {
       .nav-links {
@@ -750,6 +823,16 @@
       .contact-form { padding: 36px 24px; }
       .footer-inner { flex-direction: column; text-align: center; }
       .about-card { padding: 20px; }
+      .portfolio-grid {
+        gap: 20px; /* Намален gap за мобилно, но все още достатъчно */
+      }
+      .portfolio-content {
+        padding: 20px 16px 24px;
+      }
+      .portfolio-link {
+        font-size: 1rem;
+        padding: 10px 0; /* Още по-голяма click area на мобилно */
+      }
     }
     section { scroll-margin-top: 80px; }
   </style>
@@ -773,8 +856,13 @@
   </header>
 
   <main>
-    <!-- HERO секция -->
+    <!-- HERO секция – със Speed Badge -->
     <section class="hero">
+      <div class="speed-badge">
+        <i class="fas fa-bolt"></i>
+        <span>PageSpeed</span>
+        <span class="score">100/100</span>
+      </div>
       <div class="container">
         <div>
           <h1><span>AIwithPavel</span> – Премиум статични решения за бизнес</h1>
@@ -787,6 +875,28 @@
         </div>
       </div>
     </section>
+
+    <!-- TRUST BAR (социално доказателство) -->
+    <div class="trust-bar">
+      <div class="container">
+        <div class="trust-item">
+          <i class="fas fa-tachometer-alt"></i>
+          <span>Скорост под 0.5 сек</span>
+        </div>
+        <div class="trust-item">
+          <i class="fas fa-shield-alt"></i>
+          <span>100% сигурност</span>
+        </div>
+        <div class="trust-item">
+          <i class="fas fa-euro-sign"></i>
+          <span>Без месечни такси</span>
+        </div>
+        <div class="trust-item">
+          <i class="fas fa-robot"></i>
+          <span>AI оптимизация</span>
+        </div>
+      </div>
+    </div>
 
     <!-- Защо чист HTML? -->
     <section class="why-html">
@@ -944,7 +1054,7 @@
             </div>
           </a>
         </div>
-        <p style="text-align: center; color: #cbd5e0; margin-top: 40px; font-style: italic;">
+        <p style="text-align: center; color: #e2e8f0; margin-top: 40px; font-style: italic;">
           ⚡ Демо визиите са създадени, за да покажат възможностите – вашият сайт може да бъде следващият!
         </p>
       </div>
@@ -955,6 +1065,7 @@
       <div class="container">
         <div class="about-card">
           <div class="about-avatar">
+            <!-- Тук добавете ваша снимка: <img src="img/pavel.jpg" alt="Павел"> -->
             <i class="fas fa-user-tie"></i>
           </div>
           <div class="about-content">
