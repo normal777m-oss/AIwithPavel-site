@@ -48,11 +48,19 @@
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   
-  <!-- Google Fonts & FontAwesome -->
+  <!-- === ОПТИМИЗИРАНИ GOOGLE FONTS === -->
+  <!-- Preconnect за по-бързо установяване на връзка -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <!-- Зареждане на шрифта с display=swap за по-добро потребителско изживяване -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  
+  <!-- === ОПТИМИЗИРАН FONTAWESOME – зареждане след зареждане на съдържанието === -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" media="print" onload="this.media='all'">
+  <!-- Fallback за браузъри без JavaScript -->
+  <noscript>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  </noscript>
   
   <style>
     /* === RESET & ГЛОБАЛНИ – ПРЕМИУМ ТЪМНА ТЕМА === */
@@ -93,7 +101,6 @@
       margin-bottom: 1rem;
     }
 
-    /* Подобрен контраст – от #cbd5e0 на #e2e8f0 */
     .section-desc {
       font-size: 1.2rem;
       color: #e2e8f0;
@@ -101,7 +108,7 @@
       margin-bottom: 3rem;
     }
 
-    /* === SPEED BADGE – нов елемент за визуално доверие === */
+    /* === SPEED BADGE === */
     .speed-badge {
       position: absolute;
       top: 20px;
@@ -179,7 +186,7 @@
       transition: color 0.2s ease;
       font-size: 1rem;
       position: relative;
-      padding: 5px 0; /* Увеличена click area */
+      padding: 5px 0;
     }
     .nav-links a:hover {
       color: #4da6ff;
@@ -251,6 +258,7 @@
       background: linear-gradient(145deg, #4da6ff, #80bfff);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
+      font-weight: 800;
     }
     .hero .subhead {
       font-size: 1.3rem;
@@ -302,7 +310,7 @@
       color: #e2e8f0;
     }
 
-    /* === LOGO BAR (TRUST SIGNALS) – нов елемент === */
+    /* === LOGO BAR (TRUST SIGNALS) === */
     .trust-bar {
       background: #0f0f0f;
       padding: 30px 0;
@@ -504,7 +512,7 @@
     .portfolio-grid {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
-      gap: 30px; /* Увеличен gap за повече "въздух" */
+      gap: 30px;
       margin-top: 20px;
     }
     .portfolio-item {
@@ -549,7 +557,6 @@
     .portfolio-item:hover .portfolio-img img {
       transform: scale(1.05);
     }
-    /* Специален знак за реализиран проект */
     .real-project-badge {
       position: absolute;
       top: 10px;
@@ -580,7 +587,6 @@
       letter-spacing: 0.5px;
       border: 1px solid #4a4a4a;
     }
-    /* Интерактивност за демо проекти – "събуждане" при hover */
     .portfolio-item.demo-item .portfolio-img {
       filter: grayscale(40%);
       transition: filter 0.3s ease;
@@ -589,7 +595,7 @@
       filter: grayscale(0%);
     }
     .portfolio-content {
-      padding: 24px 20px 28px; /* Увеличен padding за по-добра click area */
+      padding: 24px 20px 28px;
     }
     .portfolio-content h3 {
       font-size: 1.4rem;
@@ -612,7 +618,6 @@
       margin-right: 6px;
       margin-bottom: 8px;
     }
-    /* Увеличена click area за линковете в портфолиото */
     .portfolio-link {
       display: inline-block;
       margin-top: 16px;
@@ -623,8 +628,8 @@
       display: inline-flex;
       align-items: center;
       gap: 6px;
-      font-size: 1rem; /* Увеличен шрифт */
-      padding: 8px 0; /* По-голяма click area */
+      font-size: 1rem;
+      padding: 8px 0;
     }
     .portfolio-link i {
       font-size: 0.9rem;
@@ -637,7 +642,7 @@
       transform: translateX(4px);
     }
 
-    /* === ЗА МЕН – с кликаем телефон и място за снимка === */
+    /* === ЗА МЕН – с кликаем телефон === */
     .about {
       padding: 60px 0;
       background: #0a0a0a;
@@ -737,7 +742,7 @@
       background: #4da6ff;
       color: #0a0a0a;
       border: none;
-      padding: 18px 40px; /* Увеличен padding за по-лесно натискане */
+      padding: 18px 40px;
       border-radius: 60px;
       font-weight: 600;
       font-size: 1.2rem;
@@ -794,7 +799,7 @@
       transform: translateY(-3px);
     }
 
-    /* === RESPONSIVE – с подобрения за мобилна версия === */
+    /* === RESPONSIVE === */
     @media screen and (max-width: 1100px) {
       .portfolio-grid {
         grid-template-columns: repeat(3, 1fr);
@@ -824,14 +829,14 @@
       .footer-inner { flex-direction: column; text-align: center; }
       .about-card { padding: 20px; }
       .portfolio-grid {
-        gap: 20px; /* Намален gap за мобилно, но все още достатъчно */
+        gap: 20px;
       }
       .portfolio-content {
         padding: 20px 16px 24px;
       }
       .portfolio-link {
         font-size: 1rem;
-        padding: 10px 0; /* Още по-голяма click area на мобилно */
+        padding: 10px 0;
       }
     }
     section { scroll-margin-top: 80px; }
@@ -994,7 +999,6 @@
           <a href="https://ojd-riltsi.eu" target="_blank" class="portfolio-item" rel="noopener noreferrer">
             <div class="portfolio-img">
               <span class="real-project-badge">✓ Реален проект</span>
-              <!-- Тук добавете реален скрийншот: <img src="img/ojd-screenshot.jpg" alt="Обединено женско дружество Рилци - реален проект"> -->
               <i class="fas fa-hands-helping" style="font-size: 3rem; color: #4da6ff;"></i>
             </div>
             <div class="portfolio-content">
@@ -1010,7 +1014,6 @@
           <a href="https://normal777m-oss.github.io/pet.shop.delta.hill/" target="_blank" class="portfolio-item demo-item" rel="noopener noreferrer">
             <div class="portfolio-img">
               <span class="demo-badge">Демо</span>
-              <!-- Тук добавете скрийншот: <img src="img/delta-hill-demo.jpg" alt="Зоомагазин ДЕЛТА ХИЛ - демо визия"> -->
               <i class="fas fa-paw" style="font-size: 3rem; color: #4da6ff;"></i>
             </div>
             <div class="portfolio-content">
@@ -1026,7 +1029,6 @@
           <a href="https://normal777m-oss.github.io/Supermarket-Jivkov/" target="_blank" class="portfolio-item demo-item" rel="noopener noreferrer">
             <div class="portfolio-img">
               <span class="demo-badge">Демо</span>
-              <!-- Тук добавете скрийншот: <img src="img/jivkov-demo.jpg" alt="Супермаркет Живков - демо визия"> -->
               <i class="fas fa-shopping-basket" style="font-size: 3rem; color: #4da6ff;"></i>
             </div>
             <div class="portfolio-content">
@@ -1042,7 +1044,6 @@
           <a href="https://normal777m-oss.github.io/aparthome/" target="_blank" class="portfolio-item demo-item" rel="noopener noreferrer">
             <div class="portfolio-img">
               <span class="demo-badge">Демо</span>
-              <!-- Тук добавете скрийншот: <img src="img/aparthome-demo.jpg" alt="ApartHome - демо визия"> -->
               <i class="fas fa-home" style="font-size: 3rem; color: #4da6ff;"></i>
             </div>
             <div class="portfolio-content">
@@ -1065,7 +1066,6 @@
       <div class="container">
         <div class="about-card">
           <div class="about-avatar">
-            <!-- Тук добавете ваша снимка: <img src="img/pavel.jpg" alt="Павел"> -->
             <i class="fas fa-user-tie"></i>
           </div>
           <div class="about-content">
@@ -1084,7 +1084,6 @@
         <h2>Заявете безплатна консултация</h2>
         <div class="section-desc">Изпратете съобщение – свързвам се с вас в рамките на деня.</div>
         <div class="contact-form">
-          <!-- IMPORTANT: Регистрирайте се на formspree.io и заменете YOUR-ID -->
           <form action="https://formspree.io/f/your-id" method="POST">
             <input type="text" name="_gotcha" style="display:none">
             <div class="form-group">
@@ -1121,7 +1120,6 @@
   <!-- JavaScript за мобилното меню и активна навигация -->
   <script>
     (function() {
-      // Мобилно меню
       const menuToggle = document.querySelector('.menu-toggle');
       const navLinks = document.querySelector('.nav-links');
 
@@ -1170,7 +1168,6 @@
         });
       }
 
-      // Индикатор за активна секция при скрол
       const sections = document.querySelectorAll('section');
       const navItems = document.querySelectorAll('.nav-links a');
 
